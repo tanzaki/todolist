@@ -19,3 +19,7 @@ $tasksController = function (){
     echo 'You are here, tasksController';
 };
 Route::get('/tasks', $tasksController);
+$tasksCreateController = function (){
+
+};
+Route::get('/tasks/create', $tasksCreateController)->name('tasks.create');
