@@ -15,3 +15,7 @@ $welcomeController = function () {
     return view('welcome');
 };
 Route::get('/', $welcomeController);
+$tasksController = function (){
+    echo 'You are here, tasksController';
+};
+Route::get('/tasks', $tasksController);
