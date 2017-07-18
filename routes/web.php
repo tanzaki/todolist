@@ -20,6 +20,11 @@ $tasksController = function (){
 };
 Route::get('/tasks', $tasksController);
 $tasksCreateController = function (){
-    echo '<form><input type="text"><input type="submit"></form>';
+    echo '
+<form>
+    <input type="text">
+    <input type="submit">
+</form>
+';
 };
 Route::get('/tasks/create', $tasksCreateController)->name('tasks.create');
