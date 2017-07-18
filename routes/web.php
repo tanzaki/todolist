@@ -21,10 +21,14 @@ $tasksController = function (){
 Route::get('/tasks', $tasksController);
 $tasksCreateController = function (){
     echo '
-<form>
+<form action="/tasks/store">
     <input type="text">
     <input type="submit">
 </form>
 ';
 };
 Route::get('/tasks/create', $tasksCreateController)->name('tasks.create');
+$tasksStoreController = function (){
+    echo 'tasksStoreController receive Task and save it to database';
+};
+Route::get('/tasks/store', $tasksStoreController);
