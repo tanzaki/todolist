@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Task
+ * @property string title
+ * @property bool is_done
  * @package App
  * @mixin \Eloquent
  */
