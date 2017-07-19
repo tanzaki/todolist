@@ -36,8 +36,5 @@ $tasksStoreController = function (){
     $task->title = $task_title;
     $task->is_done = false;
     $task->save();
-    $tasksTable = $task->getTable();
-    echo "<div>Task saved to a row in table '$tasksTable'</div>";
-    echo "<pre>{$task->toJson(JSON_PRETTY_PRINT)}</pre>";
 };
 Route::get('/tasks/store', $tasksStoreController);
