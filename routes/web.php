@@ -36,5 +36,6 @@ $tasksStoreController = function (){
     $task->title = $task_title;
     $task->is_done = false;
     $task->save();
+    return redirect('/tasks');
 };
 Route::get('/tasks/store', $tasksStoreController);
