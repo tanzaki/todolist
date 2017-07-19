@@ -11,6 +11,8 @@
 |
 */
 
+use App\Task;
+
 $welcomeController = function () {
     return view('welcome');
 };
@@ -30,6 +32,8 @@ $tasksCreateController = function (){
 Route::get('/tasks/create', $tasksCreateController)->name('tasks.create');
 $tasksStoreController = function (){
     $task_title = request('task_title');
-    echo $task_title;
+    $task = new Task();
+    $tasksTable = $task->getTable();
+    echo "<div>Task saving to a row in table '$tasksTable'</div>";
 };
 Route::get('/tasks/store', $tasksStoreController);
