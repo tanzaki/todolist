@@ -17,6 +17,10 @@ $welcomeController = function () {
     return view('welcome');
 };
 Route::get('/', $welcomeController);
+Route::get('/lists/create', 'ListsController@create')->name( 'lists.create');
+Route::get('/lists/store', 'ListsController@store')->name( 'lists.store');
+Route::get('/lists', 'ListsController@index')->name( 'lists.index');
+//
 Route::get('/tasks', 'TasksController@index');
 Route::get('/tasks/create', 'TasksController@create')->name('tasks.create');
 Route::get('/tasks/store', 'TasksController@store');
