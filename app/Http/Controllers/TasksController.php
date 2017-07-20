@@ -16,16 +16,7 @@ class TasksController extends Controller {
 		echo "<div><pre>{$tasks->toJson(JSON_PRETTY_PRINT)}</pre></div>";
 	}
 	function create(){
-		$list_id = request('list_id');
-		$list = \App\ListTask::find( $list_id );
-		echo "New task to <em>$list->title</em>";
-		echo '
-<form action="/tasks/store">
-    <input type="text" name="task_title">
-    <input type="hidden" name="list_id" value="' . $list_id . '">
-    <input type="submit">
-</form>
-';
+		return view('tasks.create');
 	}
 	function store(){
 		$task_title = request('task_title');
