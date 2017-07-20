@@ -45,7 +45,7 @@ class ListsController extends Controller {
             /** @var ListTask $list */
 		    $url_new_task_for_this_list = route( 'tasks.create', ['list_id'=>$list->id]);
 		    echo "<div><a href='$url_new_task_for_this_list'>New task for {$list->title}</a></div>";
-		    $list_tasks = $list->tasks()->getResults();
+		    $list_tasks = $list->tasks;
 		    echo '<ul>';
 		    foreach ($list_tasks as $task){
 		        echo "<li>$task->title</li>";
