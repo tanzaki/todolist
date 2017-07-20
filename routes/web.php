@@ -18,15 +18,7 @@ $welcomeController = function () {
 };
 Route::get('/', $welcomeController);
 Route::get('/tasks', 'TasksController@index');
-$tasksCreateController = function (){
-    echo '
-<form action="/tasks/store">
-    <input type="text" name="task_title">
-    <input type="submit">
-</form>
-';
-};
-Route::get('/tasks/create', $tasksCreateController)->name('tasks.create');
+Route::get('/tasks/create', 'TasksController@create')->name('tasks.create');
 $tasksStoreController = function (){
     $task_title = request('task_title');
     $task = new Task();

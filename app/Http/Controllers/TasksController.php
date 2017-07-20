@@ -15,4 +15,12 @@ class TasksController extends Controller {
 		$tasks = \App\Task::all();
 		echo "<div><pre>{$tasks->toJson(JSON_PRETTY_PRINT)}</pre></div>";
 	}
+	function create(){
+		echo '
+<form action="/tasks/store">
+    <input type="text" name="task_title">
+    <input type="submit">
+</form>
+';
+	}
 }
