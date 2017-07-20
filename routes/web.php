@@ -17,13 +17,7 @@ $welcomeController = function () {
     return view('welcome');
 };
 Route::get('/', $welcomeController);
-$tasksController = function (){
-    echo 'You are here, tasksController';
-    echo '<div><a href="/tasks/create">New task</a></div>';
-    $tasks = Task::all();
-    echo "<div><pre>{$tasks->toJson(JSON_PRETTY_PRINT)}</pre></div>";
-};
-Route::get('/tasks', $tasksController);
+Route::get('/tasks', 'TasksController@index');
 $tasksCreateController = function (){
     echo '
 <form action="/tasks/store">

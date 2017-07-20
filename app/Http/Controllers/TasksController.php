@@ -9,4 +9,10 @@
 namespace App\Http\Controllers;
 
 class TasksController extends Controller {
+	function index(){
+		echo 'You are here, tasksController';
+		echo '<div><a href="/tasks/create">New task</a></div>';
+		$tasks = \App\Task::all();
+		echo "<div><pre>{$tasks->toJson(JSON_PRETTY_PRINT)}</pre></div>";
+	}
 }
