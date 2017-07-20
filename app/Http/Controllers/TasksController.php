@@ -34,6 +34,11 @@ class TasksController extends Controller {
 		$task->is_done = false;
 		$task->list_id = request('list_id');
 		$task->save();
+
+		$list_id = request( 'list_id' );
+		$list    = \App\ListTask::find( $list_id );
+		$list->tasks()->save( $task );
+
 		return redirect()->route( 'lists.index' );
 	}
 }
