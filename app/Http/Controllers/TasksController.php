@@ -23,4 +23,12 @@ class TasksController extends Controller {
 </form>
 ';
 	}
+	function store(){
+		$task_title = request('task_title');
+		$task = new \App\Task();
+		$task->title = $task_title;
+		$task->is_done = false;
+		$task->save();
+		return redirect('/tasks');
+	}
 }
