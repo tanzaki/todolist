@@ -40,15 +40,10 @@ class ListsController extends Controller {
 <div><a href='{$route_lists}'>Lists</a></div>
 <div><a href='{$route_new_list}'>New list</a></div>
 ";
-	    echo "<pre>";
 	    $lists = ListTask::all();
 	    foreach ($lists as $list){
             /** @var ListTask $list */
-		    echo gettype( $list );
-		    echo get_class( $list );
-		    echo $list->toJson(JSON_PRETTY_PRINT);
 	    }
-	    echo "</pre>";
 
     }
 }
