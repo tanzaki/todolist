@@ -43,7 +43,8 @@ class ListsController extends Controller {
 	    $lists = ListTask::all();
 	    foreach ($lists as $list){
             /** @var ListTask $list */
-		    echo "<div><a href='#'>New task for {$list->title}</a></div>";
+		    $url_new_task_for_this_list = route( 'tasks.create', ['list_id'=>$list->id]);
+		    echo "<div><a href='$url_new_task_for_this_list'>New task for {$list->title}</a></div>";
 	    }
 
     }
