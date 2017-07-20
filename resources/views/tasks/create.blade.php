@@ -1,6 +1,9 @@
 <?php
+use App\ListTask;
+
 $list_id = request('list_id');
 $list = \App\ListTask::find( $list_id );
+/** @var ListTask $list */
 echo "New task to <em>$list->title</em>";
 echo '
 <form action="/tasks/store">
