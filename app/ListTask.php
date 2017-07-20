@@ -16,5 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string title
  */
 class ListTask extends Model {
-
+	public function tasks() {
+		return $this->hasMany( \App\Task::class, 'list_id' );
+	}
 }
