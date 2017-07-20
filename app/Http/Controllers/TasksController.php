@@ -16,7 +16,9 @@ class TasksController extends Controller {
 		echo "<div><pre>{$tasks->toJson(JSON_PRETTY_PRINT)}</pre></div>";
 	}
 	function create(){
-		return view('tasks.create');
+		$list_id = request('list_id');
+		$list = \App\ListTask::find( $list_id );
+		return view('tasks.create', ['list'=>$list]);
 	}
 	function store(){
 		$task_title = request('task_title');
