@@ -8,6 +8,8 @@
 
 namespace App\Http\Controllers;
 
+use App\ListTask;
+
 class ListsController extends Controller {
 	function create() {
 		$route_new_list = route( 'lists.create');
@@ -25,7 +27,7 @@ class ListsController extends Controller {
 		<?php
 	}
 	function store(){
-	    $list_task = new \App\ListTask();
+	    $list_task = new ListTask();
 	    $list_task->title = request('list_name');
 	    $list_task->save();
 	    return redirect()->route( 'lists.index');
@@ -39,7 +41,7 @@ class ListsController extends Controller {
 <div><a href='{$route_new_list}'>New list</a></div>
 ";
 	    echo "<pre>";
-	    echo \App\ListTask::all()->toJson(JSON_PRETTY_PRINT);
+	    echo ListTask::all()->toJson(JSON_PRETTY_PRINT);
 	    echo "</pre>";
 
     }
