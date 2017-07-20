@@ -43,6 +43,7 @@ class ListsController extends Controller {
 	    echo "<pre>";
 	    $lists = ListTask::all();
 	    foreach ($lists as $list){
+            /** @var ListTask $list */
 		    echo gettype( $list );
 		    echo get_class( $list );
 		    echo $list->toJson(JSON_PRETTY_PRINT);
