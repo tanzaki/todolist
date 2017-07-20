@@ -19,6 +19,7 @@ class TasksController extends Controller {
 		echo '
 <form action="/tasks/store">
     <input type="text" name="task_title">
+    <input type="hidden" name="list_id" value="0">
     <input type="submit">
 </form>
 ';
@@ -28,6 +29,7 @@ class TasksController extends Controller {
 		$task = new \App\Task();
 		$task->title = $task_title;
 		$task->is_done = false;
+		$task->list_id = request('list_id');
 		$task->save();
 		return redirect('/tasks');
 	}
