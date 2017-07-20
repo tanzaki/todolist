@@ -43,6 +43,7 @@ class ListsController extends Controller {
 	    $lists = ListTask::all();
 	    foreach ($lists as $list){
             /** @var ListTask $list */
+		    echo "<div><a href='#'>New task for {$list->title}</a></div>";
 	    }
 
     }
