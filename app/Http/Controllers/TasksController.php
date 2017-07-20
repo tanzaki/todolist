@@ -22,7 +22,7 @@ class TasksController extends Controller {
 		echo '
 <form action="/tasks/store">
     <input type="text" name="task_title">
-    <input type="hidden" name="list_id" value="0">
+    <input type="hidden" name="list_id" value="' . $list_id . '">
     <input type="submit">
 </form>
 ';
