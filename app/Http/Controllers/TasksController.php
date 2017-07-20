@@ -31,6 +31,6 @@ class TasksController extends Controller {
 		$task->is_done = false;
 		$task->list_id = request('list_id');
 		$task->save();
-		return redirect('/tasks');
+		return redirect()->route( 'lists.index' );
 	}
 }
